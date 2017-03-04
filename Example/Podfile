@@ -1,0 +1,6 @@
+use_frameworks!
+target 'STCameraPicker_Tests' do
+  pod 'STCameraPicker', :path => '../'
+  
+  
+end
