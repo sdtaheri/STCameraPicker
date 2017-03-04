@@ -7,9 +7,9 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'STCameraPicker'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of STCameraPicker.'
+s.name             = 'STCameraPicker'
+s.version          = '1.0.0'
+s.summary          = 'STCameraPicker is a UIViewController subclass to capture multiple images via the camera.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,26 +17,19 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+s.description      = 'STCameraPicker is a UIViewController a la UIImagePickerController which allows to capture mutiple images via camera without interrupting.'
+s.homepage         = 'https://github.com/sdtaheri/STCameraPicker'
+# s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+s.license          = { :type => 'MIT', :file => 'LICENSE' }
+s.author           = { 'Saeed Taheri' => 'saeed.taheri@gmail.com' }
+s.source           = { :git => 'https://github.com/sdtaheri/STCameraPicker.git', :tag => s.version.to_s }
+s.social_media_url = 'https://twitter.com/saeed_taheri'
 
-  s.homepage         = 'https://github.com/Saeed Taheri/STCameraPicker'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Saeed Taheri' => 'saeed.taheri@gmail.com' }
-  s.source           = { :git => 'https://github.com/Saeed Taheri/STCameraPicker.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+s.ios.deployment_target = '9.0'
 
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = 'STCameraPicker/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'STCameraPicker' => ['STCameraPicker/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+# s.source_files = 'STCameraPicker/Classes/Private/*.{m,h}', 'STCameraPicker/Classes/Public/*.h'
+s.source_files = 'STCameraPicker/Classes/Private/*.{m,h}'
+s.resource_bundle = {'Assets' => ['STCameraPicker/Assets/**/*.{png}']}
+# s.public_header_files = ['STCameraPicker/Classes/Public/*.h']
+s.frameworks = 'UIKit'
 end

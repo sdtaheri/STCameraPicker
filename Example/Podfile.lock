@@ -1,0 +1,16 @@
+PODS:
+  - STCameraPicker (0.1.0)
+
+DEPENDENCIES:
+  - STCameraPicker (from `../`)
+
+EXTERNAL SOURCES:
+  STCameraPicker:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  STCameraPicker: 59d0556536ae62b69ddb37831bfd4a9e929d0f05
+
+PODFILE CHECKSUM: 6ab5c4bbe5f30d57099a26d05187fd92dce34e2d
+
+COCOAPODS: 1.2.0

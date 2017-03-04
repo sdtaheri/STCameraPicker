@@ -1,0 +1,6 @@
+framework module STCameraPicker {
+  umbrella header "STCameraPicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

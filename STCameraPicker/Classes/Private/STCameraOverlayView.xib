@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="STCameraOverlayView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lu-Iz-PEx">
+                    <rect key="frame" x="0.0" y="392" width="320" height="88"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLv-bQ-SCj" userLabel="Camera">
+                    <rect key="frame" x="0.0" y="-34" width="320" height="426"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="xLv-bQ-SCj" secondAttribute="height" multiplier="3:4" id="NJR-V2-Pcc"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVc-Mf-UHD">
+                    <rect key="frame" x="124" y="400" width="72" height="72"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="72" id="6rC-md-wUs"/>
+                        <constraint firstAttribute="width" secondItem="IVc-Mf-UHD" secondAttribute="height" multiplier="1:1" id="C68-19-dKK"/>
+                    </constraints>
+                    <state key="normal" image="cameraCapture"/>
+                    <state key="selected" image="cameraCaptureSelected"/>
+                    <state key="highlighted" image="cameraCaptureSelected"/>
+                    <connections>
+                        <action selector="captureImage:" destination="iN0-l3-epB" eventType="touchUpInside" id="aG2-81-Iti"/>
+                    </connections>
+                </button>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ld-MR-DZT" userLabel="CollectionView Background">
+                    <rect key="frame" x="-0.5" y="296" width="320" height="96"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Keu-3Q-fgF">
+                    <rect key="frame" x="0.0" y="296" width="320" height="96"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="96" id="Dbc-Mb-YFg"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="4" minimumInteritemSpacing="4" id="CO8-Qx-VL2">
+                        <size key="itemSize" width="82" height="82"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="4" minY="4" maxX="4" maxY="8"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXo-eO-wkX">
+                    <rect key="frame" x="266" y="8" width="38" height="30"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Done">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="doneButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZOf-rA-df2"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQ5-bd-Hyf">
+                    <rect key="frame" x="16" y="8" width="48" height="30"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="TI7-ni-8Ke"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QyB-7N-yTK">
+                    <rect key="frame" x="16" y="414" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="QyB-7N-yTK" secondAttribute="height" multiplier="1:1" id="XR9-cI-VbO"/>
+                        <constraint firstAttribute="width" constant="44" id="c7E-vX-O1v"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="flashButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="ovv-zx-exy"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="tQ5-bd-Hyf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="0jX-Wi-1to"/>
+                <constraint firstItem="QyB-7N-yTK" firstAttribute="centerY" secondItem="IVc-Mf-UHD" secondAttribute="centerY" id="0o5-rG-aPA"/>
+                <constraint firstItem="4lu-Iz-PEx" firstAttribute="top" secondItem="xLv-bQ-SCj" secondAttribute="bottom" id="5jI-sg-BIm"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xLv-bQ-SCj" secondAttribute="bottom" id="86D-LS-MpI"/>
+                <constraint firstItem="IVc-Mf-UHD" firstAttribute="centerY" secondItem="4lu-Iz-PEx" secondAttribute="centerY" priority="999" id="8gw-QF-UcS"/>
+                <constraint firstItem="IVc-Mf-UHD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Keu-3Q-fgF" secondAttribute="bottom" constant="8" id="BX4-Wq-4hZ"/>
+                <constraint firstItem="xLv-bQ-SCj" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="H1m-Se-ZQu"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IVc-Mf-UHD" secondAttribute="bottom" constant="8" id="JuR-jq-ZYn"/>
+                <constraint firstItem="4lu-Iz-PEx" firstAttribute="top" secondItem="Keu-3Q-fgF" secondAttribute="bottom" priority="999" id="MZx-w7-hek"/>
+                <constraint firstItem="QyB-7N-yTK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="NHo-6u-ziu"/>
+                <constraint firstItem="xLv-bQ-SCj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="999" constant="54" id="P0z-Ke-txI"/>
+                <constraint firstAttribute="trailing" secondItem="eXo-eO-wkX" secondAttribute="trailing" constant="16" id="VkB-lC-tjS"/>
+                <constraint firstItem="IVc-Mf-UHD" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="X1v-xW-xDX"/>
+                <constraint firstItem="4lu-Iz-PEx" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="b3Z-KB-qnd"/>
+                <constraint firstItem="eXo-eO-wkX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="cWx-83-t1q"/>
+                <constraint firstItem="tQ5-bd-Hyf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="e8D-1s-Vms"/>
+                <constraint firstItem="4lu-Iz-PEx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fPi-IO-1xD"/>
+                <constraint firstItem="9Ld-MR-DZT" firstAttribute="centerX" secondItem="Keu-3Q-fgF" secondAttribute="centerX" id="faW-b3-3qH"/>
+                <constraint firstItem="Keu-3Q-fgF" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="gFa-S9-eJz"/>
+                <constraint firstItem="Keu-3Q-fgF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hPE-de-oHR"/>
+                <constraint firstAttribute="bottom" secondItem="4lu-Iz-PEx" secondAttribute="bottom" id="jec-90-Xvs"/>
+                <constraint firstItem="9Ld-MR-DZT" firstAttribute="centerY" secondItem="Keu-3Q-fgF" secondAttribute="centerY" id="lVV-WO-kud"/>
+                <constraint firstItem="xLv-bQ-SCj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lXb-Iq-L75"/>
+                <constraint firstItem="9Ld-MR-DZT" firstAttribute="width" secondItem="Keu-3Q-fgF" secondAttribute="width" id="ljL-QV-ViT"/>
+                <constraint firstItem="9Ld-MR-DZT" firstAttribute="height" secondItem="Keu-3Q-fgF" secondAttribute="height" id="s6r-AH-qDJ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <connections>
+                <outlet property="cancelButton" destination="tQ5-bd-Hyf" id="7iR-f4-dkl"/>
+                <outlet property="captureButton" destination="IVc-Mf-UHD" id="kDa-fb-nNk"/>
+                <outlet property="collectionView" destination="Keu-3Q-fgF" id="fUu-hO-id6"/>
+                <outlet property="collectionViewBackground" destination="9Ld-MR-DZT" id="Irx-4W-Mgy"/>
+                <outlet property="doneButton" destination="eXo-eO-wkX" id="t2R-an-GEI"/>
+                <outlet property="flashButton" destination="QyB-7N-yTK" id="f2H-fj-aqB"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cameraCapture" width="72" height="72"/>
+        <image name="cameraCaptureSelected" width="72" height="72"/>
+    </resources>
+</document>
